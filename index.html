@@ -106,7 +106,7 @@
             border: 1px solid rgba(255,255,255,0.05);
         }
 
-        /* 🔥 TRICK: HIDES ALL TIDIO BRANDING & POWERED BY LABELS */
+        /* TRICK: HIDES ALL TIDIO BRANDING & POWERED BY LABELS */
         #tidio-chat-iframe iframe #inside-iframe .powered-by-tidio,
         iframe[title="Tidio Chat"] .powered-by-tidio,
         div[class*="powered-by"],
@@ -158,5 +158,21 @@
     </div>
 
     <script src="//code.tidio.co/2lzqvvocnufx9728yd4ncqsij9pyxq2q.js"></script>
-    </body>
+    <script>
+        window.tidioChatApi = window.tidioChatApi || {};
+        window.tidioChatApi.on = window.tidioChatApi.on || function(name, callback) {
+            window.tidioChatApi.listeners = window.tidioChatApi.listeners || {};
+            window.tidioChatApi.listeners[name] = window.tidioChatApi.listeners[name] || [];
+            window.tidioChatApi.listeners[name].push(callback);
+        };
+        
+        // When chat is ready, let's inject custom runtime alignments if permitted by iframe layout
+        window.tidioChatApi.on("ready", function() {
+            window.tidioChatApi.setVisitorData({
+                tags: ["P2P King Premium Trader"]
+            });
+        });
+    </script>
+
+</body>
 </html>
