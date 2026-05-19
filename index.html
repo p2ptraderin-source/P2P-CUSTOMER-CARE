@@ -2,47 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>P2P TRADING KING 👑 - USDT Hub</title>
     <style>
-        /* Modern Premium Crypto Theme */
+        /* Modern Premium Crypto Theme - Responsive Fix */
         body { 
             font-family: 'Segoe UI', Roboto, Helvetica, sans-serif; 
             text-align: center; 
             background: radial-gradient(circle at top, #06101e 0%, #0b1e36 60%, #020813 100%); 
             color: #ffffff;
-            padding: 50px 20px; 
+            padding: 20px 15px; 
             margin: 0;
             min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             box-sizing: border-box;
         }
         .container {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 45px 30px;
-            border-radius: 24px;
+            padding: 30px 20px;
+            border-radius: 20px;
             box-shadow: 0 25px 50px rgba(0,0,0,0.6);
-            display: inline-block;
-            max-width: 550px;
             width: 100%;
+            max-width: 450px; /* Reduced to fit all mobile screens perfectly */
+            box-sizing: border-box;
         }
         .crown-badge {
             background: linear-gradient(135deg, #ffd700 0%, #ffa500 100%);
             color: #020813;
-            padding: 6px 20px;
+            padding: 5px 15px;
             border-radius: 50px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 800;
             display: inline-block;
-            margin-bottom: 20px;
-            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
             box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
         }
         h1 { 
             color: #ffffff; 
-            margin: 0 0 10px 0; 
-            font-size: 34px; 
+            margin: 0 0 8px 0; 
+            font-size: 28px; /* Slightly reduced for mobile alignment */
             font-weight: 800;
             letter-spacing: -0.5px;
         }
@@ -51,59 +54,64 @@
         }
         .tagline {
             color: #94a3b8;
-            font-size: 16px;
-            margin-bottom: 30px;
+            font-size: 14px;
+            margin-bottom: 20px;
         }
         
         /* Dynamic Profit Table card */
         .profit-card {
             background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.05) 100%);
             border: 1px solid rgba(16, 185, 129, 0.2);
-            padding: 20px;
-            border-radius: 16px;
-            margin: 25px 0;
-            text-align: left;
+            padding: 15px;
+            border-radius: 12px;
+            margin: 20px 0;
+            box-sizing: border-box;
         }
-        .profit-row {
-            display: table;
+        .profit-table {
             width: 100%;
-            margin-bottom: 10px;
+            border-collapse: collapse;
         }
-        .profit-row:last-child { margin-bottom: 0; }
-        .profit-label { display: table-cell; font-size: 15px; color: #cbd5e1; }
-        .profit-value { display: table-cell; text-align: right; font-size: 18px; font-weight: 700; }
-        .highlight-text { color: #10b981; }
+        .profit-table td {
+            padding: 6px 0;
+            font-size: 14px;
+        }
+        .profit-label { color: #cbd5e1; text-align: left; }
+        .profit-value { text-align: right; font-size: 16px; font-weight: 700; }
+        .highlight-text { color: #10b981; font-size: 18px !important; }
         .gold-text { color: #ffd700; }
 
+        /* Mobile Responsive Features Layout */
         .features {
-            display: table;
-            width: 100%;
-            margin: 30px 0 15px 0;
-            border-top: 1px solid rgba(255,255,255,0.08);
-            padding-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0 10px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 20px;
+            gap: 10px;
         }
         .feature-item {
-            display: table-cell;
-            width: 33.33%;
+            flex: 1;
             text-align: center;
-            font-size: 12px;
+            font-size: 11px;
             color: #94a3b8;
+            line-height: 1.3;
         }
         .feature-item strong {
             display: block;
             color: #ffffff;
-            font-size: 15px;
-            margin-bottom: 6px;
+            font-size: 13px;
+            margin-bottom: 4px;
         }
         .cta-box {
             color: #e2e8f0;
-            font-size: 14.5px;
-            line-height: 1.6;
-            margin-top: 25px;
+            font-size: 13px;
+            line-height: 1.5;
+            margin-top: 20px;
             background: rgba(0, 0, 0, 0.4);
-            padding: 18px;
+            padding: 15px;
             border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-sizing: border-box;
         }
 
         /* TRICK: HIDES ALL TIDIO BRANDING & POWERED BY LABELS */
@@ -126,53 +134,43 @@
         <div class="tagline">Sell Your USDT At Highest Premium Rates</div>
         
         <div class="profit-card">
-            <div class="profit-row">
-                <div class="profit-label">Your USDT Volume:</div>
-                <div class="profit-value gold-text">10,000 INR Value</div>
-            </div>
-            <div class="profit-row" style="margin-top: 8px; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 8px;">
-                <div class="profit-label">Instant Daily Profit:</div>
-                <div class="profit-value highlight-text">+100 INR Extra Earn</div>
-            </div>
+            <table class="profit-table">
+                <tr>
+                    <td class="profit-label">Your USDT Volume:</td>
+                    <td class="profit-value gold-text">10,000 INR Value</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 4px; height: 1px;"></td>
+                </tr>
+                <tr>
+                    <td class="profit-label" style="padding-top: 8px;">Instant Daily Profit:</td>
+                    <td class="profit-value highlight-text" style="padding-top: 8px;">+100 INR Extra Earn</td>
+                </tr>
+            </table>
         </div>
 
         <div class="features">
             <div class="feature-item">
                 <strong>Premium Price</strong>
-                Highest Rates Guaranteed
+                Highest Rates
             </div>
             <div class="feature-item">
                 <strong>Instant Cash</strong>
-                Direct Bank Transfer
+                Bank Transfer
             </div>
             <div class="feature-item">
                 <strong>100% Secure</strong>
-                Escrow Support Desk
+                Escrow Desk
             </div>
         </div>
 
         <div class="cta-box">
             <strong>Want to Start Earning Instantly?</strong><br>
-            Click the live chat icon on the bottom right corner. Connect with our operator, drop your wallet details, and transfer securely with zero hassle!
+            Click the live chat icon on the bottom right corner. Connect with our operator, drop your details, and transfer securely!
         </div>
     </div>
 
     <script src="//code.tidio.co/2lzqvvocnufx9728yd4ncqsij9pyxq2q.js"></script>
-    <script>
-        window.tidioChatApi = window.tidioChatApi || {};
-        window.tidioChatApi.on = window.tidioChatApi.on || function(name, callback) {
-            window.tidioChatApi.listeners = window.tidioChatApi.listeners || {};
-            window.tidioChatApi.listeners[name] = window.tidioChatApi.listeners[name] || [];
-            window.tidioChatApi.listeners[name].push(callback);
-        };
-        
-        // When chat is ready, let's inject custom runtime alignments if permitted by iframe layout
-        window.tidioChatApi.on("ready", function() {
-            window.tidioChatApi.setVisitorData({
-                tags: ["P2P King Premium Trader"]
-            });
-        });
-    </script>
-
-</body>
+    </body>
 </html>
+
