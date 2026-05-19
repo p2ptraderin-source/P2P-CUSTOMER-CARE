@@ -3,18 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Support</title>
+    <title>P2P Support Center</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f9; padding: 50px; }
-        h1 { color: #333; }
-        p { color: #666; font-size: 18px; }
+        /* Modern Clean Styling */
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            text-align: center; 
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); 
+            padding: 80px 20px; 
+            margin: 0;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            display: inline-block;
+            max-width: 500px;
+        }
+        h1 { color: #1e3c72; margin-bottom: 10px; font-size: 28px; }
+        p { color: #555; font-size: 16px; line-height: 1.6; }
+        .badge {
+            background-color: #2ed573;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        /* 🔥 TRICK: THIS HIDES THE "POWERED BY TIDIO" BRANDING */
+        #tidio-chat-iframe iframe #inside-iframe .powered-by-tidio,
+        iframe[title="Tidio Chat"] .powered-by-tidio,
+        div[class*="powered-by"] {
+            display: none !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+            height: 0 !important;
+        }
     </style>
 </head>
 <body>
 
-    <h1>Welcome to Our Customer Support</h1>
-    <p>We are here to help you. Please click the chat icon on the bottom right to start a conversation with us. You can also share screenshots!</p>
+    <div class="container">
+        <div class="badge">● LIVE SUPPORT ACTIVE</div>
+        <h1>P2P Customer Care</h1>
+        <p>Welcome to our official support center. We are here to assist you instantly. Please click the blue chat icon at the bottom right corner to start a conversation or share screenshots with our team.</p>
+    </div>
 
     <script src="//code.tidio.co/2lzqvvocnufx9728yd4ncqsij9pyxq2q.js"></script>
     </body>
-<!-- </html> -->
+</html>
